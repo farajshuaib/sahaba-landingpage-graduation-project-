@@ -1,5 +1,5 @@
 import { Popover, Transition } from "@headlessui/react";
-import React, { FC, Fragment, useContext, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
 
 // <--- NavItemType --->
@@ -32,11 +32,11 @@ const NavigationItem: FC<NavigationItemWithRouterProps> = ({ menuItem }) => {
       <NavLink
         target={item.targetBlank ? "_blank" : undefined}
         rel="noopener noreferrer"
-        className={({ isActive }) =>(
+        className={({ isActive }) =>
           `inline-flex items-center px-4 py-2 text-sm font-normal rounded-full xl:text-base text-neutral-700 dark:text-neutral-300 xl:px-5 hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200 ${
             isActive &&
             "!font-semibold !text-neutral-900 bg-neutral-100 dark:bg-neutral-800 dark:!text-neutral-100"
-          } `)
+          } `
         }
         to={{
           pathname: item.href || undefined,

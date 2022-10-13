@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import i18n from "i18next";
-import { initReactI18next, useTranslation } from "react-i18next";
-import { ar, en, fr } from "./locales";
+import { initReactI18next } from "react-i18next";
+import { ar, en } from "./locales";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 
@@ -10,7 +10,7 @@ import "./styles/index.scss";
 import "./index.css";
 import "./assets/fonts/line-awesome-1.3.0/css/line-awesome.css";
 import "rc-slider/assets/index.css";
-import HeaderLogged from "./components/Header/HeaderLogged";
+import useDarkMode from "./hooks/useDarkMode";
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -19,9 +19,6 @@ i18n.use(initReactI18next).init({
     },
     ar: {
       translation: ar,
-    },
-    fr: {
-      translation: fr,
     },
   },
   lng:

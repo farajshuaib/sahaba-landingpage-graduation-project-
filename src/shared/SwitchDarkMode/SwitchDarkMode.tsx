@@ -1,46 +1,11 @@
 import React, { useEffect, useState } from "react";
+import useDarkMode from "../../hooks/useDarkMode";
 
 export interface SwitchDarkModeProps {
   className?: string;
 }
 const SwitchDarkMode: React.FC<SwitchDarkModeProps> = ({ className = "" }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      toDark();
-    } else {
-      toLight();
-    }
-  }, []);
-
-  const toDark = () => {
-    setIsDarkMode(true);
-    const root = document.querySelector("html");
-    if (!root) return;
-    !root.classList.contains("dark") && root.classList.add("dark");
-    localStorage.theme = "dark";
-  };
-
-  const toLight = () => {
-    setIsDarkMode(false);
-    const root = document.querySelector("html");
-    if (!root) return;
-    root.classList.remove("dark");
-    localStorage.theme = "light";
-  };
-
-  function _toogleDarkMode() {
-    if (localStorage.theme === "light") {
-      toDark();
-    } else {
-      toLight();
-    }
-  }
+  const { isDarkMode, toDark, toLight, _toogleDarkMode } = useDarkMode();
 
   return (
     <button

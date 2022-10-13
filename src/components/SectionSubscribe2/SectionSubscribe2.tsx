@@ -5,7 +5,6 @@ import NcImage from "../../shared/NcImage/NcImage";
 import Badge from "../../shared/Badge/Badge";
 import Input from "../../shared/Input/Input";
 import { useApi } from "../../hooks/useApi";
-import { toast } from "react-toastify";
 
 export interface SectionSubscribe2Props {
   className?: string;
@@ -21,10 +20,8 @@ const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = "" }) => {
     setLoading(true);
     try {
       const { data } = await api.post("/subscribe", { email });
-      toast.success(data.message)
       setLoading(false);
-    } catch (e:any) {
-      toast.error(e.response.data.message)
+    } catch (e: any) {
       setLoading(false);
     }
   };
@@ -93,11 +90,7 @@ const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = "" }) => {
             type="submit"
             className="absolute transform -translate-y-1/2 top-1/2 right-1"
           >
-            {loading ? (
-              _renderLoading()
-            ) : (
-              <i className="w-6 h-6 bx bx-right" />
-            )}
+            {loading ? _renderLoading() : <i className="w-6 h-6 bx bx-right" />}
           </ButtonCircle>
         </form>
       </div>

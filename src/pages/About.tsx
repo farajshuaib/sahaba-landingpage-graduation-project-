@@ -16,36 +16,32 @@ export interface PageAboutProps {
 
 const PageAbout: FC<PageAboutProps> = ({ className = "" }) => {
   return (
-    <>
-      <HeaderLogged />
-      <div
-        className={`nc-PageAbout overflow-hidden relative ${className}`}
-        data-nc-id="PageAbout"
-      >
-        {/* ======== BG GLASS ======== */}
-        <BgGlassmorphism />
+    <div
+      className={`nc-PageAbout overflow-hidden relative ${className}`}
+      data-nc-id="PageAbout"
+    >
+      {/* ======== BG GLASS ======== */}
+      <BgGlassmorphism />
 
-        <div className="container py-16 space-y-16 lg:py-28 lg:space-y-28">
-          <SectionHero
-            rightImg={rightImg}
-            heading="👋 About Us."
-            btnText=""
-            subHeading="We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
-          />
+      <div className="container py-16 space-y-16 lg:py-28 lg:space-y-28">
+        <SectionHero
+          rightImg={rightImg}
+          heading="👋 About Us."
+          btnText=""
+          subHeading="We’re impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
+        />
 
-          <SectionFounder />
-          <div className="relative py-16">
-            <BackgroundSection />
-            <SectionClientSay />
-          </div>
-
-          <SectionStatistic />
-
-          <SectionSubscribe2 />
+        <SectionFounder />
+        <div className="relative py-16">
+          <BackgroundSection />
+          <SectionClientSay />
         </div>
+
+        <SectionStatistic />
+
+        <SectionSubscribe2 />
       </div>
-      <Footer />
-    </>
+    </div>
   );
 };
 
