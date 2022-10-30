@@ -5,8 +5,6 @@ import BgGlassmorphism from "../components/BgGlassmorphism/BgGlassmorphism";
 import SectionBecomeAnAuthor from "../components/SectionBecomeAnAuthor/SectionBecomeAnAuthor";
 import SectionSubscribe2 from "../components/SectionSubscribe2/SectionSubscribe2";
 import SectionVideos from "../components/SectionVideos";
-import HeaderLogged from "../components/Header/HeaderLogged";
-import Footer from "../shared/Footer/Footer";
 import SectionHero3 from "../components/SectionHero/SectionHero3";
 import Heading from "../shared/Heading/Heading";
 import heroRight1 from "../assets/images/hero-right1.png";

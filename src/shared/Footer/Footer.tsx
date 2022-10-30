@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
       title: t("INFORMATION"),
       menus: [
         {
-          href: "https://www.sahabanft.com/term-of-services",
+          href: "https://www.sahabanft.com/terms-of-service",
           label: t("Term_of_services"),
         },
         {

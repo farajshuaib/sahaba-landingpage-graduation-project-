@@ -14,21 +14,8 @@ export default defineConfig({
     "process.env": process.env,
     global: "globalThis",
   },
-  plugins: [
-    react(),
-    viteTsconfigPaths(),
-    svgrPlugin(),
-    !production &&
-      nodePolyfills({
-        include: [
-          "node_modules/**/*.js",
-          new RegExp("node_modules/.vite/.*js"),
-        ],
-      }),
-  ],
-  server: {
-    port: 3000,
-  },
+  plugins: [react(), viteTsconfigPaths(), svgrPlugin()],
+  
   build: {
     rollupOptions: {
       external: ["jss-plugin-globalThis"],

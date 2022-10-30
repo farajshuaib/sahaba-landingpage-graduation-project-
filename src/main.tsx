@@ -7,10 +7,9 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 
 import "./styles/index.scss";
-import "./index.css";
+import "./styles/index.css";
 import "./assets/fonts/line-awesome-1.3.0/css/line-awesome.css";
 import "rc-slider/assets/index.css";
-import useDarkMode from "./hooks/useDarkMode";
 
 i18n.use(initReactI18next).init({
   resources: {
