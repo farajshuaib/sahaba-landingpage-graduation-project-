@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import imagePng from "assets/images/hero-right-3.png";
-import ButtonPrimary from "shared/Button/ButtonPrimary";
-import HeroSearchForm from "components/HeroSearchForm/HeroSearchForm";
+import ButtonPrimary from "../../shared/Button/ButtonPrimary";
 
 export interface SectionHero2Props {
   children?: React.ReactNode;
@@ -49,9 +48,7 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = "", children }) => {
         </div>
       </div>
 
-      <div className="z-10 w-full mb-12 lg:mb-0 lg:-mt-20 xl:-mt-48">
-        <HeroSearchForm />
-      </div>
+      
     </div>
   );
 };

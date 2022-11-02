@@ -1,7 +1,7 @@
 import React, { FC, Fragment, ReactNode, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import ButtonClose from "shared/ButtonClose/ButtonClose";
-import Button from "shared/Button/Button";
+import ButtonClose from "../../shared/ButtonClose/ButtonClose";
+import Button from "../../shared/Button/Button";
 
 export interface NcModalProps {
   renderContent: () => ReactNode;
@@ -67,7 +67,7 @@ const NcModal: FC<NcModalProps> = ({
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Dialog.Overlay className="fixed inset-0 bg-neutral-900 bg-opacity-50 dark:bg-opacity-80" />
+              <Dialog.Overlay className="fixed inset-0 bg-opacity-50 bg-neutral-900 dark:bg-opacity-80" />
             </Transition.Child>
 
             {/* This element is to trick the browser into centering the modal contents. */}
@@ -89,15 +89,15 @@ const NcModal: FC<NcModalProps> = ({
               <div
                 className={`inline-block w-full my-5 overflow-hidden text-left align-middle transition-all transform bg-white border border-black border-opacity-5 shadow-xl rounded-2xl sm:my-8 dark:bg-neutral-800 dark:border-neutral-700 text-neutral-900 dark:text-neutral-300 ${contentExtraClass}`}
               >
-                <div className="py-4 px-6 text-center relative border-b border-neutral-100 dark:border-neutral-700 md:py-5">
+                <div className="relative px-6 py-4 text-center border-b border-neutral-100 dark:border-neutral-700 md:py-5">
                   <ButtonClose
                     onClick={closeModal}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 sm:left-4"
+                    className="absolute transform -translate-y-1/2 left-2 top-1/2 sm:left-4"
                   />
                   {modalTitle && (
                     <Dialog.Title
                       as="h3"
-                      className="text-base font-semibold text-neutral-900 lg:text-xl dark:text-neutral-200 mx-10"
+                      className="mx-10 text-base font-semibold text-neutral-900 lg:text-xl dark:text-neutral-200"
                     >
                       {modalTitle}
                     </Dialog.Title>

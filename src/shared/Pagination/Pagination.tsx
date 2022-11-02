@@ -1,11 +1,10 @@
-import { CustomLink } from "data/types";
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import twFocusClass from "utils/twFocusClass";
+import twFocusClass from "../../utils/twFocusClass";
 
 export interface PaginationProps {
   className?: string;
-  meta: Meta;
+  meta: any;
   setPage: (val: number) => void;
 }
 

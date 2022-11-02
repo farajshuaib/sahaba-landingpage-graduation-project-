@@ -1,5 +1,3 @@
-import { currentNetwork } from "./../constant";
-import { toast } from "react-toastify";
 import axios from "axios";
 
 let eth_price = 0;

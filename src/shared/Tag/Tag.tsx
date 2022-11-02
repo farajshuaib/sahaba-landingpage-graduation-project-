@@ -1,4 +1,4 @@
-import { _getTagNameRd } from "contains/fakeData";
+import { _getTagNameRd } from "../../contains/fakeData";
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
 
