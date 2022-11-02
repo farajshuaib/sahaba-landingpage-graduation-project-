@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logoImg from "../../assets/images/logo.svg";
+import logoImg from "../../assets/images/logo_dark.svg";
 import logoLightImg from "../../assets/images/logo_light.svg";
 
 export interface LogoProps {
@@ -23,7 +23,7 @@ const Logo: React.FC<LogoProps> = ({
       {/* PLEASE UN COMMENT BELLOW CODE AND USE IT */}
       {img ? (
         <img
-          className={`block max-h-12 ${imgLight ? "dark:hidden" : ""}`}
+          className={`block max-h-32 ${imgLight ? "dark:hidden" : ""}`}
           src={img}
           alt="Logo"
         />
@@ -32,7 +32,7 @@ const Logo: React.FC<LogoProps> = ({
       )}
       {imgLight && (
         <img
-          className="hidden max-h-12 dark:block"
+          className="hidden max-h-32 dark:block"
           src={imgLight}
           alt="Logo-Light"
         />

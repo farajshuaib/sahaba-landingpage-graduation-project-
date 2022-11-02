@@ -9,11 +9,6 @@ const otherPageChildMenus: NavItemType[] = [
   },
   {
     id: ncNanoId(),
-    href: "/about",
-    name: "About",
-  },
-  {
-    id: ncNanoId(),
     href: "/contact",
     name: "Contact us",
   },

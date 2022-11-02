@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import imagePng from "assets/images/hero-right-3.png";
+import imagePng from "../../assets/images/hero-right-3.png";
 import ButtonPrimary from "../../shared/Button/ButtonPrimary";
 
 export interface SectionHero2Props {
@@ -21,7 +21,7 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = "", children }) => {
             Discover the most outstanding NTFs in all topics of life. <br />{" "}
             Creative your NTFs and sell them
           </span>
-          <ButtonPrimary>
+          {/* <ButtonPrimary>
             <span>Start your search</span>
             <span>
               <svg className="w-5 h-5 ml-2.5" viewBox="0 0 24 24" fill="none">
@@ -41,7 +41,7 @@ const SectionHero2: FC<SectionHero2Props> = ({ className = "", children }) => {
                 />
               </svg>
             </span>
-          </ButtonPrimary>
+          </ButtonPrimary> */}
         </div>
         <div className="flex-grow">
           <img className="w-full" src={imagePng} alt="hero" />
