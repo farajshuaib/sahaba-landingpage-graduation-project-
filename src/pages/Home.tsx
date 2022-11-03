@@ -34,9 +34,9 @@ function Home() {
               src={ourFeatures}
               alt=""
               loading="lazy"
-              className="object-cover col-span-4"
+              className="object-cover col-span-12 mx-auto lg:col-span-4"
             />
-            <p className="col-span-8 text-xl font-medium leading-relaxed tracking-wide text-gray-500 dark:text-gray-100">
+            <p className="col-span-12 text-xl font-medium leading-relaxed tracking-wide text-gray-500 lg:col-span-8 dark:text-gray-100">
              {t('ourFeatures')}
             </p>
           </div>
@@ -51,11 +51,11 @@ function Home() {
              {t("why_sahaba")}
             </Heading>
             <div className="relative grid items-center grid-cols-12 gap-16">
-              <p className="col-span-7 text-xl font-medium leading-relaxed tracking-wide text-gray-500 dark:text-gray-100">
+              <p className="col-span-12 text-xl font-medium leading-relaxed tracking-wide text-gray-500 lg:col-span-7 dark:text-gray-100">
                 {t('why_sahaba_hero')}
               </p>
               <img
-                className="object-cover col-span-5 mx-auto rounded-xl"
+                className="object-cover col-span-12 mx-auto lg:col-span-5 rounded-xl"
                 src={whySahaba}
                 alt="hero"
               />
