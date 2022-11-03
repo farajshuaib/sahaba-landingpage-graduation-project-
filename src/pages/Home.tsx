@@ -29,7 +29,7 @@ function Home() {
         </div>
 
         <div className="container relative my-24 space-y-24 lg:space-y-32 lg:my-32">
-          <div className="grid items-center grid-cols-12 gap-16 my-12">
+          <div className="grid items-center grid-cols-12 my-12 lg:gap-16">
             <img
               src={ourFeatures}
               alt=""
@@ -50,7 +50,7 @@ function Home() {
             >
              {t("why_sahaba")}
             </Heading>
-            <div className="relative grid items-center grid-cols-12 gap-16">
+            <div className="relative grid items-center grid-cols-12 lg:gap-16">
               <p className="col-span-12 text-xl font-medium leading-relaxed tracking-wide text-gray-500 lg:col-span-7 dark:text-gray-100">
                 {t('why_sahaba_hero')}
               </p>

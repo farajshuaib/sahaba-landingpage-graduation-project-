@@ -33,7 +33,7 @@ const SocialsList1: FC<SocialsList1Props> = ({ className = "space-y-3" }) => {
   };
 
   return (
-    <div className={`nc-SocialsList1 ${className}`} data-nc-id="SocialsList1">
+    <div className={`nc-SocialsList1 gap-2 ${className}`} data-nc-id="SocialsList1">
       {socials.map(renderItem)}
     </div>
   );
