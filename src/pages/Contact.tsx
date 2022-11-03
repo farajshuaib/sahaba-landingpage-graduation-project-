@@ -11,8 +11,6 @@ import { ErrorMessage, Formik } from "formik";
 import { contactSchema } from "../services/validations";
 import { useApi } from "../hooks/useApi";
 import { Alert } from "../shared/Alert/Alert";
-import HeaderLogged from "../components/Header/HeaderLogged";
-import Footer from "../shared/Footer/Footer";
 
 export interface PageContactProps {
   className?: string;

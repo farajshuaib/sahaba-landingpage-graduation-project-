@@ -4,6 +4,7 @@ import { CustomLink } from "../../data/types";
 import React from "react";
 import LocalesDropDown from "../../components/Header/LocalesDropDown";
 import { useTranslation } from "react-i18next";
+import { APP_URL } from "../../constant";
 
 export interface WidgetFooterMenu {
   id: string;
@@ -20,9 +21,9 @@ const Footer: React.FC = () => {
       id: "5",
       title: t("Getting_started"),
       menus: [
-        { href: "/nfts", label: "NFTs" },
-        { href: "/collections", label: t("Collections") },
-        { href: "https://www.sahabanft.com", label: t("Website") },
+        { href: APP_URL + "search", label: "NFTs" },
+        { href: APP_URL + "collections", label: t("Collections") },
+        { href: "/", label: t("Website") },
       ],
     },
     {
@@ -37,7 +38,7 @@ const Footer: React.FC = () => {
           href: "/privacy-policy",
           label: t("Privacy_policy"),
         },
-        { href: "/kyc-form", label: t("Get_verified") },
+        { href: APP_URL + "/kyc-form", label: t("Get_verified") },
       ],
     },
   ];
@@ -67,9 +68,9 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className="relative py-20 border-t nc-Footer lg:pt-32 lg:pb-28 border-neutral-200 dark:border-neutral-700">
+    <div className="relative py-12 border-t nc-Footer lg:py-20 border-neutral-200 dark:border-neutral-700">
       <div className="container grid grid-cols-2 gap-y-10 gap-x-5 sm:gap-x-8 md:grid-cols-4 lg:grid-cols-4 lg:gap-x-10 ">
-        <div className="grid grid-cols-4 col-span-2 gap-5 md:col-span-4 lg:md:col-span-1 lg:flex lg:flex-col">
+        <div className="grid grid-cols-4 col-span-2 gap-2 md:col-span-4 lg:md:col-span-1 lg:flex lg:flex-col">
           <div className="col-span-2 md:col-span-1">
             <Logo />
           </div>

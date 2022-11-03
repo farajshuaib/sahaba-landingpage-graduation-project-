@@ -1,4 +1,5 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
+import { useCrud } from "../hooks/useCrud";
 import Heading from "./Heading/Heading";
 
 export interface Statistic {
@@ -32,6 +33,18 @@ export interface SectionStatisticProps {
 }
 
 const SectionStatistic: FC<SectionStatisticProps> = ({ className = "" }) => {
+  const { fetch, loading, data }: any = useCrud("/general-statistics");
+
+  useEffect(() => {
+    fetch();
+  }, []);
+
+  if (loading) {
+    return <></>;
+  }
+
+  console.log(data);
+
   return (
     <div className={`nc-SectionStatistic relative ${className}`}>
       <Heading
@@ -40,8 +53,26 @@ const SectionStatistic: FC<SectionStatisticProps> = ({ className = "" }) => {
       >
         🚀 Fast Facts
       </Heading>
-      <div className="grid md:grid-cols-2 gap-6 lg:grid-cols-3 xl:gap-8">
-        {FOUNDER_DEMO.map((item) => (
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
+        {[
+          {
+            id: "1",
+            heading: data.collections,
+            subHeading:
+              "Collections have been public around the world ",
+          },
+          {
+            id: "2",
+            heading: data.users,
+            subHeading: "Registered users account ",
+          },
+          {
+            id: "3",
+            heading: data.nfts,
+            subHeading:
+              "NFTs have been public around the world ",
+          },
+        ].map((item) => (
           <div
             key={item.id}
             className="p-6 bg-neutral-50 dark:bg-neutral-800 rounded-2xl dark:border-neutral-800"
@@ -49,7 +80,7 @@ const SectionStatistic: FC<SectionStatisticProps> = ({ className = "" }) => {
             <h3 className="text-2xl font-semibold leading-none text-neutral-900 md:text-3xl dark:text-neutral-200">
               {item.heading}
             </h3>
-            <span className="block text-sm text-neutral-500 mt-3 sm:text-base dark:text-neutral-400">
+            <span className="block mt-3 text-sm text-neutral-500 sm:text-base dark:text-neutral-400">
               {item.subHeading}
             </span>
           </div>

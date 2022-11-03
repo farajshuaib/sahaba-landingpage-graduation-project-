@@ -5,6 +5,7 @@ import rightLargeImgDark from "../../assets/images/rightLargeImgDark.png";
 import ButtonPrimary from "../../shared/Button/ButtonPrimary";
 import Logo from "../../shared/Logo/Logo";
 import ButtonSecondary from "../../shared/Button/ButtonSecondary";
+import { APP_URL } from "../../constant";
 
 export interface SectionBecomeAnAuthorProps {
   className?: string;
@@ -28,8 +29,20 @@ const SectionBecomeAnAuthor: FC<SectionBecomeAnAuthorProps> = ({
           user experience and ease of use to create, buy, sell and trade NFTs.
         </span>
         <div className="flex mt-6 space-x-2 sm:space-x-5 sm:mt-12">
-          <ButtonPrimary href="/create-nft">Create item</ButtonPrimary>
-          <ButtonSecondary href="/search">Discover more</ButtonSecondary>
+          <ButtonPrimary
+            onClick={() => {
+              window.open(APP_URL + "create-nft", "_blank");
+            }}
+          >
+            Create item
+          </ButtonPrimary>
+          <ButtonSecondary
+            onClick={() => {
+              window.open(APP_URL + "search", "_blank");
+            }}
+          >
+            Discover more
+          </ButtonSecondary>
         </div>
       </div>
       <div className="flex-grow">

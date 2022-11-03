@@ -3,10 +3,10 @@ import Heading from "../shared/Heading/Heading";
 
 const Terms: React.FC = () => {
   return (
-    <div className="relative overflow-hidden ">
+    <div className="relative overflow-hidden text-lg leading-relaxed tracking-wide">
       <BgGlassmorphism />
 
-      <section className="container">
+      <section className="container pb-16">
         <Heading desc="">Terms of Service</Heading>
         <p>
           Please read this page before proceeding as it sets out important legal

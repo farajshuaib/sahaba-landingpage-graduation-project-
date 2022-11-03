@@ -5,24 +5,34 @@ import NcImage from "../../shared/NcImage/NcImage";
 import Badge from "../../shared/Badge/Badge";
 import Input from "../../shared/Input/Input";
 import { useApi } from "../../hooks/useApi";
+import { Alert } from "../../shared/Alert/Alert";
 
 export interface SectionSubscribe2Props {
   className?: string;
+}
+
+interface AlertType {
+  type: "success" | "error";
+  message: string;
 }
 
 const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = "" }) => {
   const api = useApi();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState<string>("");
+  const [alert, setAlert] = useState<AlertType | null>(null);
 
   const submit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
+    setAlert(null);
     setLoading(true);
     try {
       const { data } = await api.post("/subscribe", { email });
       setLoading(false);
+      setAlert({ type: "success", message: data.message });
     } catch (e: any) {
       setLoading(false);
+      setAlert({ type: "error", message: e.response.data.message });
     }
   };
 
@@ -50,6 +60,18 @@ const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = "" }) => {
       </svg>
     );
   };
+
+  const _renderIconRight = () => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+    >
+      <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"></path>
+    </svg>
+  );
 
   return (
     <div
@@ -90,9 +112,10 @@ const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = "" }) => {
             type="submit"
             className="absolute transform -translate-y-1/2 top-1/2 right-1"
           >
-            {loading ? _renderLoading() : <i className="w-6 h-6 bx bx-right" />}
+            {loading ? _renderLoading() : _renderIconRight()}
           </ButtonCircle>
         </form>
+        {alert && <Alert type={alert.type}>{alert.message}</Alert>}
       </div>
       <div className="flex-grow">
         <NcImage src={rightImg} />

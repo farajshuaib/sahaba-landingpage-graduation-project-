@@ -21,10 +21,10 @@ export const Alert: React.FC<AlertProps> = ({
       classes += " bg-status-infoBg text-status-info";
       break;
     case "success":
-      classes += " bg-status-successBg text-status-success";
+      classes += " bg-green-100 text-green-600";
       break;
     case "error":
-      classes += " bg-status-errorBg text-status-error";
+      classes += " bg-red-100 text-red-600";
       break;
     case "warning":
       classes += " bg-status-warningBg text-status-warning";
@@ -35,11 +35,10 @@ export const Alert: React.FC<AlertProps> = ({
 
   return (
     <div
-      className={`ttnc-alert relative flex items-center text-paragraph-base px-6 pt-4 pb-3 rounded-lg ${classes}`}
+      className={`ttnc-alert relative my-5 flex items-center text-paragraph-base px-6 pt-4 pb-3 rounded-lg ${classes}`}
     >
-      <i className="mr-2 text-2xl pe-7s-info"></i>
       {children}
-      <ButtonClose className="absolute top-4 right-6" />
+      {/* <ButtonClose className="absolute top-4 right-6" /> */}
     </div>
   );
 };

@@ -3,12 +3,12 @@ import Heading from "../shared/Heading/Heading";
 
 const PrivacyPolicy: React.FC = () => {
   return (
-    <div className="relative overflow-hidden ">
+    <div className="relative overflow-hidden text-lg leading-relaxed tracking-wide">
       <BgGlassmorphism />
 
       <section className="container">
         <Heading desc="">Privacy policy</Heading>
-        <div className="">
+        <div className="my-8">
           <div className="">
             <p>
               The site https://sahaba.com is a web browser application that
@@ -471,7 +471,7 @@ const PrivacyPolicy: React.FC = () => {
             <p>&nbsp;</p>
           </div>
         </div>
-        <div className="">
+        <div className="my-8">
           <div className="">
             <h1 className="mb-4 text-center">Cookies</h1>
             <p>

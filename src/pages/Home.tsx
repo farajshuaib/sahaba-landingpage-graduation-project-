@@ -7,7 +7,7 @@ import SectionSubscribe2 from "../components/SectionSubscribe2/SectionSubscribe2
 import SectionVideos from "../components/SectionVideos";
 import Heading from "../shared/Heading/Heading";
 import ourFeatures from "../assets/images/our-features.png";
-import whySahaba from "../assets/images/whySahaba.webp";
+import whySahaba from "../assets/images/hero-right-2.png";
 import SectionHero2 from "../components/SectionHero/SectionHero2";
 import SectionStatistic from "../components/SectionStatistic";
 
@@ -34,7 +34,7 @@ function Home() {
               loading="lazy"
               className="object-cover col-span-4"
             />
-            <h6 className="col-span-8 text-2xl font-medium leading-relaxed tracking-wide text-gray-500 dark:text-gray-400">
+            <h6 className="col-span-8 text-xl font-medium leading-relaxed tracking-wide text-gray-500 dark:text-gray-100">
               Sahaba is a regional / niche NFT marketplace, our goal is to bring
               forward artists and creators from Libya and MENA to become a
               leading community in the Web3 space while providing them with the
@@ -47,15 +47,22 @@ function Home() {
           {/* SECTION */}
           <div className="my-12">
             <BgGlassmorphism />
-            <Heading
-              isCenter={true}
-              desc="Easy user experience, low fees, one-click minting, AirNFTs was built for artists by artists              "
-            >
+            <Heading isCenter desc="Easy user experience, low fees, one-click minting, AirNFTs was built for artists by artists              ">
               Why SahabaNFTs?
             </Heading>
-            <div className="relative ">
+            <div className="relative grid items-center grid-cols-12 gap-16">
+              <p className="col-span-7 text-xl font-medium leading-relaxed tracking-wide text-gray-500 dark:text-gray-100">
+                NFTs and Web3 did not yet reach their full potentials. We as
+                tech builders, want to contribute to the advancement of the
+                technology behind NFTs and its use-cases, On-Chain and
+                Off-Chain, but for the time being, we want to start with
+                building our own community and work directly with artists,
+                creators, buyers and developers to "on-board" them into this era
+                of creators economy. We have a very long roadmap for sure, and
+                we will release more details as soon as possible.
+              </p>
               <img
-                className="object-cover w-3/4 mx-auto rounded-xl"
+                className="object-cover col-span-5 mx-auto rounded-xl"
                 src={whySahaba}
                 alt="hero"
               />
