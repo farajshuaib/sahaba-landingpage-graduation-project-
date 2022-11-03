@@ -23,6 +23,7 @@ const LocalesDropDown: React.FC<Props> = ({ labeled }) => {
         {({ open }) => (
           <>
             <Popover.Button
+              aria-label="Locales"
               className={`
                 ${open ? "" : "text-opacity-90"}
                  group  py-2 px-3 hover:bg-gray-100 gap-2 dark:hover:bg-neutral-800 rounded-full inline-flex items-center text-base font-medium hover:text-opacity-100

@@ -36,9 +36,9 @@ function Home() {
               loading="lazy"
               className="object-cover col-span-4"
             />
-            <h6 className="col-span-8 text-xl font-medium leading-relaxed tracking-wide text-gray-500 dark:text-gray-100">
+            <p className="col-span-8 text-xl font-medium leading-relaxed tracking-wide text-gray-500 dark:text-gray-100">
              {t('ourFeatures')}
-            </h6>
+            </p>
           </div>
 
           {/* SECTION */}
