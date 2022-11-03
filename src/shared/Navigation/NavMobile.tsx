@@ -4,21 +4,32 @@ import Logo from "../../shared/Logo/Logo";
 import { Disclosure } from "@headlessui/react";
 import { NavLink } from "react-router-dom";
 import { NavItemType } from "./NavigationItem";
-import { NAVIGATION_DEMO_2 } from "../../data/navigation";
 import ButtonPrimary from "../../shared/Button/ButtonPrimary";
 import SocialsList from "../../shared/SocialsList/SocialsList";
 import SwitchDarkMode from "../../shared/SwitchDarkMode/SwitchDarkMode";
 import ButtonSecondary from "../../shared/Button/ButtonSecondary";
+import ncNanoId from "../../utils/ncNanoId";
+import { useTranslation } from "react-i18next";
 
 export interface NavMobileProps {
-  data?: NavItemType[];
   onClickClose?: () => void;
 }
 
-const NavMobile: React.FC<NavMobileProps> = ({
-  data = NAVIGATION_DEMO_2,
-  onClickClose,
-}) => {
+const NavMobile: React.FC<NavMobileProps> = ({ onClickClose }) => {
+  const { t } = useTranslation();
+  const data = [
+    {
+      id: ncNanoId(),
+      href: "/",
+      name: t("Home"),
+    },
+    {
+      id: ncNanoId(),
+      href: "/contact",
+      name: t("Contact us"),
+    },
+  ];
+
   const _renderMenuChild = (item: NavItemType) => {
     return (
       <ul className="pb-1 pl-6 text-base nav-mobile-sub-menu">
@@ -119,8 +130,8 @@ const NavMobile: React.FC<NavMobileProps> = ({
         <Logo />
         <div className="flex flex-col mt-5 text-sm text-neutral-700 dark:text-neutral-300">
           <span>
-            Discover the most outstanding articles on all topics of life. Write
-            your stories and share them
+            {t("hero_section_description1")} <br />{" "}
+            {t("hero_section_description2")}
           </span>
 
           <div className="flex items-center justify-between mt-4">
@@ -138,7 +149,7 @@ const NavMobile: React.FC<NavMobileProps> = ({
         {data.map(_renderItem)}
       </ul>
       <div className="flex items-center justify-between px-5 py-6 space-x-2">
-        <ButtonPrimary className="!px-10">go to app</ButtonPrimary>
+        <ButtonPrimary >{t("Go To App")}</ButtonPrimary>
       </div>
     </div>
   );

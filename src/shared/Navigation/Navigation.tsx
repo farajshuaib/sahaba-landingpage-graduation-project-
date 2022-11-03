@@ -1,11 +1,24 @@
 import React from "react";
 import NavigationItem from "./NavigationItem";
-import { NAVIGATION_DEMO_2 } from "../../data/navigation";
+import ncNanoId from "../../utils/ncNanoId";
+import { useTranslation } from "react-i18next";
 
 function Navigation() {
+  const { t } = useTranslation();
   return (
     <ul className="relative hidden nc-Navigation lg:flex lg:flex-wrap lg:items-center lg:space-x-1">
-      {NAVIGATION_DEMO_2.map((item) => (
+      {[
+        {
+          id: ncNanoId(),
+          href: "/",
+          name: t("Home"),
+        },
+        {
+          id: ncNanoId(),
+          href: "/contact",
+          name: t("Contact us"),
+        },
+      ].map((item) => (
         <NavigationItem key={item.id} menuItem={item} />
       ))}
     </ul>

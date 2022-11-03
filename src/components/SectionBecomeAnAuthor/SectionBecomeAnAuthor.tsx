@@ -6,6 +6,7 @@ import ButtonPrimary from "../../shared/Button/ButtonPrimary";
 import Logo from "../../shared/Logo/Logo";
 import ButtonSecondary from "../../shared/Button/ButtonSecondary";
 import { APP_URL } from "../../constant";
+import { useTranslation } from "react-i18next";
 
 export interface SectionBecomeAnAuthorProps {
   className?: string;
@@ -14,6 +15,7 @@ export interface SectionBecomeAnAuthorProps {
 const SectionBecomeAnAuthor: FC<SectionBecomeAnAuthorProps> = ({
   className = "",
 }) => {
+  const { t } = useTranslation();
   return (
     <div
       className={`nc-SectionBecomeAnAuthor relative flex flex-col lg:flex-row items-center  ${className}`}
@@ -22,26 +24,25 @@ const SectionBecomeAnAuthor: FC<SectionBecomeAnAuthorProps> = ({
       <div className="flex-shrink-0 mb-16 lg:mb-0 lg:mr-10 lg:w-2/5">
         <Logo className="w-42" />
         <h2 className="font-semibold text-3xl sm:text-4xl xl:text-6xl mt-6 sm:mt-10 !leading-[1.112] tracking-tight">
-          A creative agency that lead and inspire.
+          {t("SectionBecomeAnAuthor.title")}
         </h2>
         <span className="block mt-6 text-neutral-500 dark:text-neutral-400 ">
-          Sahabafts is the NFT marketplace built on Ethereum focusing highly on
-          user experience and ease of use to create, buy, sell and trade NFTs.
+          {t("SectionBecomeAnAuthor.desc")}
         </span>
-        <div className="flex mt-6 space-x-2 sm:space-x-5 sm:mt-12">
+        <div className="flex gap-5 mt-6 space-x-2 sm:space-x-5 sm:mt-12">
           <ButtonPrimary
             onClick={() => {
               window.open(APP_URL + "create-nft", "_blank");
             }}
           >
-            Create item
+            {t("Create_item")}
           </ButtonPrimary>
           <ButtonSecondary
             onClick={() => {
               window.open(APP_URL + "search", "_blank");
             }}
           >
-            Discover more
+            {t("Discover_more")}
           </ButtonSecondary>
         </div>
       </div>

@@ -6,6 +6,7 @@ import Badge from "../../shared/Badge/Badge";
 import Input from "../../shared/Input/Input";
 import { useApi } from "../../hooks/useApi";
 import { Alert } from "../../shared/Alert/Alert";
+import { useTranslation } from "react-i18next";
 
 export interface SectionSubscribe2Props {
   className?: string;
@@ -21,13 +22,18 @@ const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = "" }) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState<string>("");
   const [alert, setAlert] = useState<AlertType | null>(null);
+  const { t, i18n } = useTranslation();
 
   const submit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     setAlert(null);
     setLoading(true);
     try {
-      const { data } = await api.post("/subscribe", { email });
+      const { data } = await api.post(
+        "/subscribe",
+        { email },
+        { params: { locale: i18n.language } }
+      );
       setLoading(false);
       setAlert({ type: "success", message: data.message });
     } catch (e: any) {
@@ -79,22 +85,21 @@ const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = "" }) => {
       data-nc-id="SectionSubscribe2"
     >
       <div className="flex-shrink-0 mb-10 lg:mb-0 lg:mr-10 lg:w-2/5">
-        <h2 className="text-4xl font-semibold">Never miss a drop!</h2>
+        <h2 className="text-4xl font-semibold">{t("Never_miss_a_drop")}</h2>
         <span className="block mt-5 text-neutral-500 dark:text-neutral-400">
-          Subcribe to our super-exclusive drop list and be the first to know
-          abour upcoming drops
+          {t("subscribe_desc")}
         </span>
         <ul className="mt-10 space-y-4">
-          <li className="flex items-center space-x-4">
+          <li className="flex items-center gap-2 space-x-4">
             <Badge name="01" />
             <span className="font-medium text-neutral-700 dark:text-neutral-300">
-              Get more discount
+              {t("Get more discount")}
             </span>
           </li>
-          <li className="flex items-center space-x-4">
+          <li className="flex items-center gap-2 space-x-4">
             <Badge color="red" name="02" />
             <span className="font-medium text-neutral-700 dark:text-neutral-300">
-              Get premium magazines
+              {t("Get premium magazines")}
             </span>
           </li>
         </ul>
@@ -102,7 +107,7 @@ const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = "" }) => {
           <Input
             required
             aria-required
-            placeholder="Enter your email"
+            placeholder={t("Enter_your_email")}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.currentTarget.value)}
@@ -110,7 +115,7 @@ const SectionSubscribe2: FC<SectionSubscribe2Props> = ({ className = "" }) => {
           />
           <ButtonCircle
             type="submit"
-            className="absolute transform -translate-y-1/2 top-1/2 right-1"
+            className={`absolute transform -translate-y-1/2 top-1/2 ${i18n.language  == 'ar' ? "left-1 rotate-180" : "right-1"}`}
           >
             {loading ? _renderLoading() : _renderIconRight()}
           </ButtonCircle>

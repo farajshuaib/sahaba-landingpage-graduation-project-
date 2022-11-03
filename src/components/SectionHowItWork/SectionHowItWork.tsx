@@ -6,47 +6,44 @@ import HIW3img from "../../assets/images/HIW3img.png";
 import HIW4img from "../../assets/images/HIW4img.png";
 import VectorImg from "../../assets/images/VectorHIW.svg";
 import Badge from "../../shared/Badge/Badge";
+import { useTranslation } from "react-i18next";
 
 export interface SectionHowItWorkProps {
   className?: string;
-  data?: typeof DEMO_DATA[0][];
 }
 
-const DEMO_DATA = [
-  {
-    id: 1,
-    img: HIW1img,
-    imgDark: HIW1img,
-    title: "Filter & Discover",
-    desc: "Connect with wallet, discover, buy NTFs, sell your NFTs and earn money",
-  },
-  {
-    id: 2,
-    img: HIW2img,
-    imgDark: HIW2img,
-    title: "Connect wallet",
-    desc: "Connect with wallet, discover, buy NTFs, sell your NFTs and earn money",
-  },
-  {
-    id: 3,
-    img: HIW3img,
-    imgDark: HIW3img,
-    title: "Start trading",
-    desc: "Connect with wallet, discover, buy NTFs, sell your NFTs and earn money",
-  },
-  {
-    id: 4,
-    img: HIW4img,
-    imgDark: HIW4img,
-    title: "Earn money",
-    desc: "Connect with wallet, discover, buy NTFs, sell your NFTs and earn money",
-  },
-];
-
-const SectionHowItWork: FC<SectionHowItWorkProps> = ({
-  className = "",
-  data = DEMO_DATA,
-}) => {
+const SectionHowItWork: FC<SectionHowItWorkProps> = ({ className = "" }) => {
+  const { t } = useTranslation();
+  const data = [
+    {
+      id: 1,
+      img: HIW1img,
+      imgDark: HIW1img,
+      title: t("SectionHowItWork.1.title"),
+      // desc: t("SectionHowItWork.1.description"),
+    },
+    {
+      id: 2,
+      img: HIW2img,
+      imgDark: HIW2img,
+      title: t("SectionHowItWork.2.title"),
+      // desc: "Connect with wallet, discover, buy NTFs, sell your NFTs and earn money",
+    },
+    {
+      id: 3,
+      img: HIW3img,
+      imgDark: HIW3img,
+      title: t("SectionHowItWork.3.title"),
+      // desc: "Connect with wallet, discover, buy NTFs, sell your NFTs and earn money",
+    },
+    {
+      id: 4,
+      img: HIW4img,
+      imgDark: HIW4img,
+      title: t("SectionHowItWork.4.title"),
+      desc: "" //"Connect with wallet, discover, buy NTFs, sell your NFTs and earn money",
+    },
+  ];
   return (
     <div
       className={`nc-SectionHowItWork  ${className}`}
@@ -58,7 +55,7 @@ const SectionHowItWork: FC<SectionHowItWorkProps> = ({
           src={VectorImg}
           alt="vector"
         />
-        {data.map((item: typeof DEMO_DATA[number], index: number) => (
+        {data.map((item: typeof data[number], index: number) => (
           <div
             key={item.id}
             className="relative flex flex-col items-center max-w-xs mx-auto"
@@ -81,9 +78,9 @@ const SectionHowItWork: FC<SectionHowItWorkProps> = ({
                 }
               />
               <h3 className="text-lg font-semibold">{item.title}</h3>
-              <span className="block text-neutral-500 dark:text-neutral-400">
+              {item?.desc && <span className="block text-neutral-500 dark:text-neutral-400">
                 {item.desc}
-              </span>
+              </span>}
             </div>
           </div>
         ))}

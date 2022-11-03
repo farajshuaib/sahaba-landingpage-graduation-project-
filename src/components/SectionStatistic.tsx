@@ -1,4 +1,5 @@
 import React, { FC, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { useCrud } from "../hooks/useCrud";
 import Heading from "./Heading/Heading";
 
@@ -34,7 +35,7 @@ export interface SectionStatisticProps {
 
 const SectionStatistic: FC<SectionStatisticProps> = ({ className = "" }) => {
   const { fetch, loading, data }: any = useCrud("/general-statistics");
-
+  const { t } = useTranslation();
   useEffect(() => {
     fetch();
   }, []);
@@ -43,34 +44,25 @@ const SectionStatistic: FC<SectionStatisticProps> = ({ className = "" }) => {
     return <></>;
   }
 
-  console.log(data);
-
   return (
     <div className={`nc-SectionStatistic relative ${className}`}>
-      <Heading
-        desc=" We’re impartial and independent, and every day we create distinctive,
-          world-class programmes and content"
-      >
-        🚀 Fast Facts
-      </Heading>
+      <Heading desc={t("statistics_desc")}>🚀 {t("Fast_Facts")}</Heading>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-8">
         {[
           {
             id: "1",
             heading: data.collections,
-            subHeading:
-              "Collections have been public around the world ",
+            subHeading: t("collections_count"),
           },
           {
             id: "2",
             heading: data.users,
-            subHeading: "Registered users account ",
+            subHeading: t("users_count"),
           },
           {
             id: "3",
             heading: data.nfts,
-            subHeading:
-              "NFTs have been public around the world ",
+            subHeading: t("items_count"),
           },
         ].map((item) => (
           <div

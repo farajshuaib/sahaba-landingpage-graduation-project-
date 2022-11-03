@@ -2,11 +2,68 @@
   "Create_New_NFT": "Create New NFT",
   "Select_language": "Select language",
   "Languages": "Languages",
-  "Getting_started": "Getting_started",
+  "Getting_started": "Getting started",
   "Collections": "Collections",
   "Website": "Website",
   "INFORMATION": "INFORMATION",
   "Term_of_services": "Term of services",
   "Privacy_policy": "Privacy policy",
-  "Get_verified": "Get verified"
+  "Get_verified": "Get verified",
+  "Support": "Support",
+  "Contact_us": "Contact us",
+  "Discover_collect_and_sell_NFTs": "Discover, collect, and sell NFTs",
+  "hero_section_description1": "Discover the most outstanding NTFs in all topics of life.",
+  "hero_section_description2": "Creative your NTFs and sell them",
+  "SectionHowItWork": {
+    "1": {
+      "title": "Filter & Discover",
+      "description": "Connect with wallet, discover, buy NTFs, sell your NFTs and earn money"
+    },
+    "2": {
+      "title": "Connect wallet",
+      "description": "Connect with wallet, discover, buy NTFs, sell your NFTs and earn money"
+    },
+    "3": {
+      "title": "Start trading",
+      "description": "Connect with wallet, discover, buy NTFs, sell your NFTs and earn money"
+    },
+    "4": {
+      "title": "Earn money",
+      "description": "Connect with wallet, discover, buy NTFs, sell your NFTs and earn money"
+    }
+  },
+  "ourFeatures": "Sahaba is a regional / niche NFT marketplace, our goal is to bring forward artists and creators from Libya and MENA to become a leading community in the Web3 space while providing them with the necessary knowledge-base and the platform to launch their work. Sahabanft is also open for all creators from anywhere in the world, anyone and everyone are welcome to join.",
+  "why_sahaba": " Why SahabaNFTs?",
+  "why_sahaba_desc": "Easy user experience, low fees, one-click minting, SahabaNFTs was built for artists by artists",
+  "why_sahaba_hero": "NFTs and Web3 did not yet reach their full potentials. We as tech builders, want to contribute to the advancement of the technology behind NFTs and its use-cases, On-Chain and Off-Chain, but for the time being, we want to start with building our own community and work directly with artists, creators, buyers and developers to 'on-board' them into this era of creators economy. We have a very long roadmap for sure, and we will release more details as soon as possible.",
+  "SectionBecomeAnAuthor": {
+    "title": "A creative agency that lead and inspire",
+    "desc": "Sahabafts is the NFT marketplace built on Ethereum focusing highly on user experience and ease of use to create, buy, sell and trade NFTs."
+  },
+  "Create_item": "Create NFT",
+  "Discover_more": "Discover more",
+  "Fast_Facts": "Fast Facts",
+  "statistics_desc": "We’re impartial and independent, and every day we create distinctive, world-class programmes and content",
+  "collections_count": "Collections have been public around the world ",
+  "items_count": "NFTs have been public around the world ",
+  "users_count": "Registered users account ",
+  "Never_miss_a_drop": "Never miss a drop!",
+  "subscribe_desc": "Subcribe to our super-exclusive drop list and be the first to know about upcoming drops",
+  "Get more discount": "Get more discount",
+  "Get premium magazines": "Get premium magazines",
+  "Enter_your_email": "Enter your email",
+  "Go To App": "Go To App",
+  "Contact us": "Contact us",
+  "Home": "Home",
+  "Contact": "Contact us",
+  "full_name_placeholder": "Example mohamed",
+  "Full name": "Full name",
+  "Email Address": "Email Address",
+  "Subject": "Subject",
+  "Message": "Message",
+  "Send Message": "Send Message",
+  "Name is required": "Name is required",
+  "Email is required": "Email is required",
+  "Subject is required": "Subject is required",
+  "Message is required": "Message is required"
 }

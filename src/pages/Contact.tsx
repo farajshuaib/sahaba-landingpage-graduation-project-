@@ -11,6 +11,7 @@ import { ErrorMessage, Formik } from "formik";
 import { contactSchema } from "../services/validations";
 import { useApi } from "../hooks/useApi";
 import { Alert } from "../shared/Alert/Alert";
+import { useTranslation } from "react-i18next";
 
 export interface PageContactProps {
   className?: string;
@@ -34,6 +35,7 @@ const info = [
 const PageContact: FC<PageContactProps> = ({ className = "" }) => {
   const [success, setSuccess] = useState<string>("");
   const [error, setError] = useState<string>("");
+  const { t } = useTranslation();
 
   const api = useApi();
   return (
@@ -43,7 +45,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
     >
       <div className="mb-24 lg:mb-32">
         <h2 className="my-20 flex items-center text-3xl leading-[115%] md:text-5xl md:leading-[115%] font-semibold text-neutral-900 dark:text-neutral-100 justify-center">
-          Contact
+          {t("Contact")}
         </h2>
         <div className="container mx-auto max-w-7xl">
           <div className="grid flex-shrink-0 grid-cols-1 gap-12 md:grid-cols-2 ">
@@ -95,9 +97,9 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
               }) => (
                 <div>
                   <form className="grid grid-cols-1 gap-6">
-                    <FormItem htmlFor="name" label="Full name">
+                    <FormItem htmlFor="name" label={t("Full name")}>
                       <Input
-                        placeholder="Example Doe"
+                        placeholder={t('full_name_placeholder')}
                         name="name"
                         id="name"
                         value={values.name}
@@ -113,7 +115,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
                         className="text-sm text-red-500"
                       />
                     </FormItem>
-                    <FormItem htmlFor="email" label="Email Address">
+                    <FormItem htmlFor="email" label={t("Email Address")}>
                       <Input
                         type="email"
                         id="email"
@@ -130,7 +132,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
                         className="text-sm text-red-500"
                       />
                     </FormItem>
-                    <FormItem htmlFor="subject" label="Subject">
+                    <FormItem htmlFor="subject" label={t("Subject")}>
                       <Input
                         type="email"
                         id="subject"
@@ -146,7 +148,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
                         className="text-sm text-red-500"
                       />
                     </FormItem>
-                    <FormItem htmlFor="message" label="Message">
+                    <FormItem htmlFor="message" label={t("Message")}>
                       <Textarea
                         id="message"
                         name="message"
@@ -178,7 +180,7 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
                         onClick={handleSubmit}
                         type="submit"
                       >
-                        Send Message
+                        {t("Send Message")}
                       </ButtonPrimary>
                     </div>
                   </form>
