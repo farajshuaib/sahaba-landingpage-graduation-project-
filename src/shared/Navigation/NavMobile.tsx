@@ -10,6 +10,7 @@ import SwitchDarkMode from "../../shared/SwitchDarkMode/SwitchDarkMode";
 import ButtonSecondary from "../../shared/Button/ButtonSecondary";
 import ncNanoId from "../../utils/ncNanoId";
 import { useTranslation } from "react-i18next";
+import { APP_URL } from "../../constant";
 
 export interface NavMobileProps {
   onClickClose?: () => void;
@@ -149,7 +150,13 @@ const NavMobile: React.FC<NavMobileProps> = ({ onClickClose }) => {
         {data.map(_renderItem)}
       </ul>
       <div className="flex items-center justify-between px-5 py-6 space-x-2">
-        <ButtonPrimary >{t("Go To App")}</ButtonPrimary>
+        <ButtonPrimary
+          onClick={() => {
+            window.open(APP_URL, "_blank");
+          }}
+        >
+          {t("Go To App")}
+        </ButtonPrimary>
       </div>
     </div>
   );
