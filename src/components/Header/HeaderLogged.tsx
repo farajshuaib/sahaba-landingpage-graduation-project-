@@ -11,7 +11,7 @@ import Badge from "../../shared/Badge/Badge";
 export interface HeaderLoggedProps {}
 
 const HeaderLogged: FC<HeaderLoggedProps> = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   return (
     <div className="relative z-40 w-full nc-HeaderLogged ">
       {/* NAV */}
@@ -29,7 +29,7 @@ const HeaderLogged: FC<HeaderLoggedProps> = () => {
                 className="relative inline-flex items-center px-4 py-2 text-sm font-normal rounded-full xl:text-base text-neutral-700 dark:text-neutral-300 xl:px-5 hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
                 href={COIN_FORM_URL}
               >
-                <span className="absolute left-0 w-8 h-5 text-sm text-center text-white align-middle bg-red-600 -top-2 rounded-xl">
+                <span className={`absolute ${i18n.language == 'ar' ? 'left-0' : 'right-0'} w-8 h-5 text-sm text-center text-white align-middle bg-red-600 -top-2 rounded-xl`}>
                   {t("New")}
                 </span>
                 <span>{t("SahabaCoin")}</span>
