@@ -10,7 +10,7 @@ import SwitchDarkMode from "../../shared/SwitchDarkMode/SwitchDarkMode";
 import ButtonSecondary from "../../shared/Button/ButtonSecondary";
 import ncNanoId from "../../utils/ncNanoId";
 import { useTranslation } from "react-i18next";
-import { APP_URL } from "../../constant";
+import { APP_URL, COIN_FORM_URL } from "../../constant";
 
 export interface NavMobileProps {
   onClickClose?: () => void;
@@ -118,6 +118,7 @@ const NavMobile: React.FC<NavMobileProps> = ({ onClickClose }) => {
             </span>
           )}
         </NavLink>
+
         {item.children && (
           <Disclosure.Panel>{_renderMenuChild(item)}</Disclosure.Panel>
         )}
@@ -148,6 +149,17 @@ const NavMobile: React.FC<NavMobileProps> = ({ onClickClose }) => {
       </div>
       <ul className="flex flex-col px-2 py-6 space-y-1">
         {data.map(_renderItem)}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative flex text-neutral-900 dark:text-white w-full items-center py-2.5 px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg "
+          href={COIN_FORM_URL}
+        >
+          <span className="absolute left-0 w-8 h-5 text-sm text-center text-white align-middle bg-red-600 -top-2 rounded-xl">
+            {t("New")}
+          </span>
+          <span>{t("SahabaCoin")}</span>
+        </a>
       </ul>
       <div className="flex items-center justify-between px-5 py-6 space-x-2">
         <ButtonPrimary

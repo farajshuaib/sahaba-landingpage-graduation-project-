@@ -65,5 +65,7 @@
   "Name is required": "Name is required",
   "Email is required": "Email is required",
   "Subject is required": "Subject is required",
-  "Message is required": "Message is required"
+  "Message is required": "Message is required",
+  "SahabaCoin": "Sahaba Coin",
+  "New": "New"
 }
