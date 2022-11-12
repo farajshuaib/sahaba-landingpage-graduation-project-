@@ -30,7 +30,7 @@ const HeaderLogged: FC<HeaderLoggedProps> = () => {
                 href={COIN_FORM_URL}
               >
                 <span className={`absolute ${i18n.language == 'ar' ? 'left-0' : 'right-0'} w-8 h-5 text-sm text-center text-white align-middle bg-red-600 -top-2 rounded-xl`}>
-                  {t("New")}
+                  {t("Soon")}
                 </span>
                 <span>{t("SahabaCoin")}</span>
               </a>
