@@ -20,15 +20,15 @@ export interface PageContactProps {
 const info = [
   {
     title: "🗺 ADDRESS",
-    desc: "Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter",
+    desc: "Tripoli, Libya",
   },
   {
     title: "💌 EMAIL",
-    desc: "nc.example@example.com",
+    desc: "info@sahabanft.com.ly",
   },
   {
     title: "☎ PHONE",
-    desc: "000-123-456-7890",
+    desc: "+218 91 162 9062",
   },
 ];
 
