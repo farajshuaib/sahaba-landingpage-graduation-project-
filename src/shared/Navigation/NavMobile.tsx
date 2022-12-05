@@ -149,7 +149,7 @@ const NavMobile: React.FC<NavMobileProps> = ({ onClickClose }) => {
       </div>
       <ul className="flex flex-col px-2 py-6 space-y-1">
         {data.map(_renderItem)}
-        <a
+        {/* <a
           target="_blank"
           rel="noopener noreferrer"
           className="relative flex text-neutral-900 dark:text-white w-full items-center py-2.5 px-4 font-medium uppercase tracking-wide text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 rounded-lg "
@@ -159,7 +159,7 @@ const NavMobile: React.FC<NavMobileProps> = ({ onClickClose }) => {
             {t("Soon")}
           </span>
           <span>{t("SahabaCoin")}</span>
-        </a>
+        </a> */}
       </ul>
       <div className="flex items-center justify-between px-5 py-6 space-x-2">
         <ButtonPrimary

@@ -23,7 +23,7 @@ const HeaderLogged: FC<HeaderLoggedProps> = () => {
           <div className="flex items-center justify-end flex-shrink-0 space-x-1 text-neutral-700 dark:text-neutral-100">
             <div className="items-center hidden space-x-2 xl:flex">
               <Navigation />
-              <a
+              {/* <a
                 target="_blank"
                 rel="noopener noreferrer"
                 className="relative inline-flex items-center px-4 py-2 text-sm font-normal rounded-full xl:text-base text-neutral-700 dark:text-neutral-300 xl:px-5 hover:text-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 dark:hover:text-neutral-200"
@@ -33,7 +33,7 @@ const HeaderLogged: FC<HeaderLoggedProps> = () => {
                   {t("Soon")}
                 </span>
                 <span>{t("SahabaCoin")}</span>
-              </a>
+              </a> */}
               <div className="hidden h-6 border-l sm:block border-neutral-300 dark:border-neutral-6000"></div>
               <div className="flex">
                 <SwitchDarkMode />
