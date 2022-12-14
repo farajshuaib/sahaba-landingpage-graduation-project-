@@ -4,7 +4,7 @@ let api: AxiosInstance;
 
 export function createApi() {
   api = axios.create({
-    baseURL: "https://sahabanft.bluespace.ly/api",
+    baseURL: "https://api.sahabanft.com.ly/api",
     // withCredentials: true,
     headers: {
       "Content-Type": "application/json",

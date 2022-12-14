@@ -1,4 +1,4 @@
-export const APP_URL = "https://sahabanft-app.netlify.app/"
+export const APP_URL = "https://app.sahabanft.com.ly/"
 
 export const COIN_FORM_URL = "https://sahabacoin.netlify.app/"
 
