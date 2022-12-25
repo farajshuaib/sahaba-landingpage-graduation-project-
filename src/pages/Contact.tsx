@@ -79,8 +79,8 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
                 setSuccess("");
                 setError("");
                 try {
-                  await api.post("/contact", values);
-                  setSuccess("true");
+                  const { data } = await api.post("/contact", values);
+                  setSuccess(data?.message || "Email sent successfully");
                 } catch (error: any) {
                   setError(
                     error.response.data.message || "something went wrong"
@@ -99,14 +99,14 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
                   <form className="grid grid-cols-1 gap-6">
                     <FormItem htmlFor="name" label={t("Full name")}>
                       <Input
-                        placeholder={t('full_name_placeholder')}
+                        placeholder={t("full_name_placeholder")}
                         name="name"
                         id="name"
                         value={values.name}
                         onChange={handleChange("name")}
                         onBlur={handleBlur("name")}
                         type="text"
-                        autoComplete="username"
+                        autoComplete="name"
                         className="mt-1"
                       />
                       <ErrorMessage
@@ -164,17 +164,15 @@ const PageContact: FC<PageContactProps> = ({ className = "" }) => {
                       />
                     </FormItem>
                     <div>
-                      {success ||
-                        (error && (
-                          <Alert
-                            containerClassName="my-5"
-                            type={
-                              success ? "success" : error ? "error" : "default"
-                            }
-                          >
-                            {success || error}
-                          </Alert>
-                        ))}
+                     {error || success &&  <Alert
+                        containerClassName="my-5"
+                        type={
+                          !!success ? "success" : !!error ? "error" : "default"
+                        }
+                      >
+                        {success || error}
+                      </Alert>}
+
                       <ButtonPrimary
                         loading={isSubmitting}
                         onClick={handleSubmit}
