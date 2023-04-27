@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import SectionHowItWork from "../components/SectionHowItWork/SectionHowItWork";
 import BackgroundSection from "../components/BackgroundSection/BackgroundSection";
 import BgGlassmorphism from "../components/BgGlassmorphism/BgGlassmorphism";
@@ -10,13 +10,16 @@ import whySahaba from "../assets/images/hero-right-2.png";
 import SectionHero2 from "../components/SectionHero/SectionHero2";
 import SectionStatistic from "../components/SectionStatistic";
 import { useTranslation } from "react-i18next";
-
+import CountDownComp from "../components/CountDown";
 
 function Home() {
   const { t } = useTranslation();
+
   return (
     <div className="text-base bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
       <div className="relative overflow-hidden nc-PageHome">
+        <CountDownComp endTime={new Date("5/10/2023 12:00")} />
+
         {/* GLASSMOPHIN */}
         <BgGlassmorphism />
 
@@ -37,22 +40,19 @@ function Home() {
               className="object-cover col-span-12 mx-auto lg:col-span-4"
             />
             <p className="col-span-12 text-xl font-medium leading-relaxed tracking-wide text-gray-500 lg:col-span-8 dark:text-gray-100">
-             {t('ourFeatures')}
+              {t("ourFeatures")}
             </p>
           </div>
 
           {/* SECTION */}
           <div className="my-12">
             <BgGlassmorphism />
-            <Heading
-              isCenter
-              desc={t('why_sahaba_desc')}
-            >
-             {t("why_sahaba")}
+            <Heading isCenter desc={t("why_sahaba_desc")}>
+              {t("why_sahaba")}
             </Heading>
             <div className="relative grid items-center grid-cols-12 lg:gap-16">
               <p className="col-span-12 text-xl font-medium leading-relaxed tracking-wide text-gray-500 lg:col-span-7 dark:text-gray-100">
-                {t('why_sahaba_hero')}
+                {t("why_sahaba_hero")}
               </p>
               <img
                 className="object-cover col-span-12 mx-auto lg:col-span-5 rounded-xl"
