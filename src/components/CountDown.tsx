@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { startTransition, useEffect, useState } from "react";
 
 interface RenderedDate {
   months: number;
@@ -8,14 +8,17 @@ interface RenderedDate {
   seconds: number;
 }
 
+const currentTime = new Date().getTime();
+
 // time after which the countdown should stop
 // endTime is in milliseconds
-const CountDownComp: React.FC<{ endTime: Date }> = ({ endTime }) => {
+const CountDownComp: React.FC<{ endDate: Date }> = ({ endDate }) => {
   const [time, setTime] = useState<Date | null>();
   const [renderedDate, setRenderedDate] = useState<RenderedDate | null>(null);
 
+
   useEffect(() => {
-    setTime(new Date(endTime.getTime() - new Date().getTime()));
+    setTime(new Date(endDate.getTime() - currentTime));
   }, []);
 
   useEffect(() => {
@@ -41,7 +44,7 @@ const CountDownComp: React.FC<{ endTime: Date }> = ({ endTime }) => {
     }
   }, [time]);
 
-  if (!renderedDate || new Date().getTime() > endTime.getTime()) {
+  if (!renderedDate || new Date().getTime() > endDate.getTime()) {
     return <span></span>;
   }
 

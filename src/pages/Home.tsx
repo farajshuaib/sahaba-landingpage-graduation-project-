@@ -12,13 +12,16 @@ import SectionStatistic from "../components/SectionStatistic";
 import { useTranslation } from "react-i18next";
 import CountDownComp from "../components/CountDown";
 
+const endDate = new Date("2023-05-10");
+
+
 function Home() {
   const { t } = useTranslation();
 
   return (
     <div className="text-base bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200">
       <div className="relative overflow-hidden nc-PageHome">
-        <CountDownComp endTime={new Date("5/10/2023 12:00")} />
+        {/* <CountDownComp endDate={endDate} /> */}
 
         {/* GLASSMOPHIN */}
         <BgGlassmorphism />
